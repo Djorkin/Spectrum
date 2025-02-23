@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://4rjgqyuuum5x"]
+
+[ext_resource type="PackedScene" uid="uid://dkxvctgje58ln" path="res://tsn/Char/player.tscn" id="1_tivnb"]
+[ext_resource type="Resource" uid="uid://c333fwophpu52" path="res://Data/player/_alisa.tres" id="2_mdqs4"]
+
+[node name="Player" instance=ExtResource("1_tivnb")]
+player_params = ExtResource("2_mdqs4")

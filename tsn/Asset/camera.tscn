@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bytmwcoxuth40"]
+
+[ext_resource type="Script" path="res://scripts/Asset_scripts/camera.gd" id="1_ofmog"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hqqpo"]
+radius = 0.709826
+
+[node name="Camera" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_ofmog")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.344456)
+shape = SubResource("SphereShape3D_hqqpo")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

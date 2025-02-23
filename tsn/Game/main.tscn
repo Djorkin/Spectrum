@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://csc8qs3221cxo"]
+
+[ext_resource type="PackedScene" uid="uid://uwrxvu6yj6au" path="res://UI/RUMI/UI/RUMI.tscn" id="1_pcp82"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqoki"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -59.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "V 0.2 + RUMI"
+label_settings = SubResource("LabelSettings_xqoki")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="RUMI" parent="." instance=ExtResource("1_pcp82")]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://uwrxvu6yj6au"]
+
+[ext_resource type="PackedScene" uid="uid://bxvgjujwf6oab" path="res://UI/Main_menu/UI/Main_menu.tscn" id="1_ue4j1"]
+[ext_resource type="Script" path="res://UI/RUMI/Scripts/Init_RUMI.gd" id="1_xd84c"]
+[ext_resource type="PackedScene" uid="uid://d3qpbouns8u3r" path="res://UI/COOP_UI/UI/change_name_ui.tscn" id="2_16k7b"]
+[ext_resource type="PackedScene" uid="uid://djw4kv4pteyr5" path="res://UI/COOP_UI/UI/choise_menu.tscn" id="3_neibl"]
+[ext_resource type="PackedScene" uid="uid://okt8jr8bhpm" path="res://UI/COOP_UI/UI/Connect_UI.tscn" id="4_cycyx"]
+[ext_resource type="PackedScene" uid="uid://bjg6uh2w4g47w" path="res://UI/Settings/UI/settings.tscn" id="4_o0ejx"]
+[ext_resource type="PackedScene" uid="uid://bc1hreinxvhgf" path="res://UI/COOP_UI/UI/lobby_ui.tscn" id="5_ccark"]
+[ext_resource type="PackedScene" uid="uid://dgo2sl2lyctxw" path="res://UI/Logger/UI/logger_window.tscn" id="6_f3lop"]
+[ext_resource type="PackedScene" uid="uid://wve1txihksg3" path="res://UI/Saves_UI/UI/Saves_UI.tscn" id="7_ogfw7"]
+
+[node name="RUMI" type="CanvasLayer"]
+script = ExtResource("1_xd84c")
+
+[node name="Main_menu" parent="." instance=ExtResource("1_ue4j1")]
+visible = false
+
+[node name="Change_name_UI" parent="." instance=ExtResource("2_16k7b")]
+visible = false
+
+[node name="Settings" parent="." instance=ExtResource("4_o0ejx")]
+visible = false
+
+[node name="Connect_UI" parent="." instance=ExtResource("4_cycyx")]
+visible = false
+
+[node name="Lobby_UI" parent="." instance=ExtResource("5_ccark")]
+visible = false
+
+[node name="Saves_UI" parent="." instance=ExtResource("7_ogfw7")]
+visible = false
+
+[node name="Choise_menu" parent="." instance=ExtResource("3_neibl")]
+visible = false
+
+[node name="debug" parent="." instance=ExtResource("6_f3lop")]
+visible = false

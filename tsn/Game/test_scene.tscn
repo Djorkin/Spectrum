@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://lp7lcwesujfe"]
+
+[ext_resource type="Texture2D" uid="uid://bueyqca1s3ugd" path="res://Assets/HDRI/brown_photostudio_06_4k.exr" id="1_nifnq"]
+[ext_resource type="PackedScene" uid="uid://boka72bh8ta33" path="res://tsn/Blend/dev_scene.tscn" id="2_an6wu"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_u3y23"]
+panorama = ExtResource("1_nifnq")
+
+[sub_resource type="Sky" id="Sky_36svm"]
+sky_material = SubResource("PanoramaSkyMaterial_u3y23")
+
+[sub_resource type="Environment" id="Environment_b82uk"]
+background_mode = 2
+sky = SubResource("Sky_36svm")
+ambient_light_source = 3
+tonemap_mode = 3
+ssr_max_steps = 512
+ssao_enabled = true
+ssao_radius = 3.57
+ssao_detail = 5.0
+ssao_horizon = 0.19
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+sdfgi_bounce_feedback = 1.44
+sdfgi_min_cell_size = 0.292969
+glow_normalized = true
+glow_intensity = 8.0
+glow_strength = 1.1
+
+[node name="Test_Scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_b82uk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.829086, 0.559121, 0, -0.559121, 0.829086, 0, 128.476, 132.169)
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_max_distance = 55.0
+sky_mode = 1
+
+[node name="MAP" type="Node" parent="."]
+
+[node name="Test" parent="MAP" instance=ExtResource("2_an6wu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 14.4371)
+current = true

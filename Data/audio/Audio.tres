@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioData" load_steps=6 format=3 uid="uid://diyw1sv66f78t"]
+
+[ext_resource type="Script" path="res://Data/audio/AudioResource.gd" id="1_n4hh2"]
+[ext_resource type="AudioStream" uid="uid://2drqfd0v7n8i" path="res://Assets/Audio/Click.wav" id="2_n7usq"]
+[ext_resource type="AudioStream" uid="uid://cavnwe8kflyxn" path="res://Assets/Audio/close_UI.wav" id="3_qheyt"]
+[ext_resource type="AudioStream" uid="uid://cn0bjjb21dsyj" path="res://Assets/Audio/error.wav" id="4_7pdss"]
+[ext_resource type="AudioStream" uid="uid://twbdjigyj36g" path="res://Assets/Audio/sub.wav" id="5_whchx"]
+
+[resource]
+script = ExtResource("1_n4hh2")
+ui_click = ExtResource("2_n7usq")
+ui_submit = ExtResource("5_whchx")
+ui_fail = ExtResource("4_7pdss")
+ui_close = ExtResource("3_qheyt")
+default_volume = -10.0

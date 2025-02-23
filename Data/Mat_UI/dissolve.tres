@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://c8f0n5iqwcjgx"]
+
+[ext_resource type="Shader" path="res://Shaders/UI/dissolve.gdshader" id="1_fneoe"]
+
+[sub_resource type="Gradient" id="Gradient_nn156"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ipmcl"]
+noise_type = 3
+fractal_weighted_strength = 0.12
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6evql"]
+in_3d_space = true
+color_ramp = SubResource("Gradient_nn156")
+noise = SubResource("FastNoiseLite_ipmcl")
+
+[resource]
+shader = ExtResource("1_fneoe")
+shader_parameter/progress = 0.0
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_6evql")

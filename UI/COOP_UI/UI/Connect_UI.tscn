@@ -1,0 +1,162 @@
+[gd_scene load_steps=13 format=3 uid="uid://okt8jr8bhpm"]
+
+[ext_resource type="Script" path="res://UI/COOP_UI/Scripts/IP_UI.gd" id="1_xlhbb"]
+[ext_resource type="Theme" uid="uid://cgg52bqvjuehj" path="res://UI/styles/Button_Style.tres" id="2_iea8i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8ahs"]
+content_margin_left = 45.0
+bg_color = Color(1, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3k4to"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5gpi"]
+content_margin_left = 45.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld27e"]
+content_margin_left = 45.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjqja"]
+content_margin_left = 48.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6xkp"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm32a"]
+content_margin_left = 45.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrwso"]
+bg_color = Color(0.905882, 0.905882, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iya0i"]
+bg_color = Color(0.905882, 0.905882, 0, 1)
+
+[sub_resource type="Theme" id="Theme_1uyi4"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 32
+Button/styles/disabled = SubResource("StyleBoxFlat_w8ahs")
+Button/styles/focus = SubResource("StyleBoxEmpty_3k4to")
+Button/styles/hover = SubResource("StyleBoxFlat_m5gpi")
+Button/styles/normal = SubResource("StyleBoxFlat_ld27e")
+Button/styles/pressed = SubResource("StyleBoxFlat_qjqja")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_y6xkp")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_y6xkp")
+Label/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_fm32a")
+Panel/styles/panel = SubResource("StyleBoxFlat_xrwso")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_iya0i")
+
+[node name="Connect_UI" type="CanvasLayer"]
+script = ExtResource("1_xlhbb")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.905882, 0.905882, 0, 1)
+
+[node name="Ip_panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 704.0
+offset_top = 445.0
+offset_right = -768.0
+offset_bottom = -475.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_1uyi4")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Ip_panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Ip_panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Ip_panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Ip_panel/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="IP" type="Label" parent="Control/Ip_panel/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_1uyi4")
+text = "IP:"
+
+[node name="LineEdit2" type="LineEdit" parent="Control/Ip_panel/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "127.0.0.1"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Control/Ip_panel/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Ip_panel/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Ip_panel/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="connect" type="Button" parent="Control/Ip_panel/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer/MarginContainer" groups=["audio_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_iea8i")
+text = "Connect"
+
+[connection signal="button_down" from="Control/Ip_panel/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer3/HBoxContainer/MarginContainer/connect" to="." method="_on_connect_button_down"]

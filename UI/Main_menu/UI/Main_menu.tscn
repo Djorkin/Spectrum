@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxvgjujwf6oab"]
+
+[ext_resource type="Script" path="res://UI/Main_menu/Scripts/main_menu.gd" id="1_im1ah"]
+[ext_resource type="Theme" uid="uid://bqojxsiorhe8d" path="res://UI/styles/Main_Theme.tres" id="2_ugubr"]
+[ext_resource type="Material" uid="uid://dlu4jccu1p5ro" path="res://Data/Mat_UI/Main_menu.tres" id="3_gyo68"]
+
+[node name="Main_menu" type="CanvasLayer"]
+script = ExtResource("1_im1ah")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ugubr")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = ExtResource("3_gyo68")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ugubr")
+color = Color(0.905882, 0.905882, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0666667
+anchor_top = 0.197222
+anchor_right = 0.222917
+anchor_bottom = 0.582407
+offset_top = 70.0
+offset_bottom = -70.0
+grow_vertical = 2
+theme = ExtResource("2_ugubr")
+metadata/_edit_use_anchors_ = true
+
+[node name="CONTINUE" type="Button" parent="Control/VBoxContainer" groups=["audio_buttons"]]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ugubr")
+text = "Continue"
+alignment = 0
+
+[node name="Create_Game" type="Button" parent="Control/VBoxContainer" groups=["audio_buttons"]]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ugubr")
+text = "Create Game"
+alignment = 0
+
+[node name="Connect" type="Button" parent="Control/VBoxContainer" groups=["audio_buttons"]]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ugubr")
+text = "Connect"
+alignment = 0
+
+[node name="Save" type="Button" parent="Control/VBoxContainer" groups=["audio_buttons"]]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ugubr")
+text = "Save"
+alignment = 0
+
+[node name="Load" type="Button" parent="Control/VBoxContainer" groups=["audio_buttons"]]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ugubr")
+text = "Load"
+alignment = 0
+
+[node name="SETTINGS" type="Button" parent="Control/VBoxContainer" groups=["audio_buttons"]]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ugubr")
+text = "Settings"
+alignment = 0
+
+[node name="EXIT_TO_MENU" type="Button" parent="Control/VBoxContainer" groups=["audio_buttons"]]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ugubr")
+text = "Exit_To_Menu"
+alignment = 0
+
+[node name="EXIT" type="Button" parent="Control/VBoxContainer" groups=["audio_buttons"]]
+visible = false
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ugubr")
+text = "Exit"
+alignment = 0
+
+[connection signal="button_down" from="Control/VBoxContainer/CONTINUE" to="." method="_on_continue_button_down"]
+[connection signal="button_down" from="Control/VBoxContainer/Create_Game" to="." method="_on_create_game_button_down"]
+[connection signal="button_down" from="Control/VBoxContainer/Connect" to="." method="_on_connect_button_down"]
+[connection signal="pressed" from="Control/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="button_down" from="Control/VBoxContainer/SETTINGS" to="." method="_on_settings_button_down"]
+[connection signal="button_down" from="Control/VBoxContainer/EXIT_TO_MENU" to="." method="_on_exit_to_menu_button_down"]
+[connection signal="pressed" from="Control/VBoxContainer/EXIT" to="." method="_on_exit_pressed"]

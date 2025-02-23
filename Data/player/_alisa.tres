@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=2 format=3 uid="uid://c333fwophpu52"]
+
+[ext_resource type="Script" path="res://Data/player/player_config.gd" id="1_81383"]
+
+[resource]
+script = ExtResource("1_81383")
+naming = "Alisa"
+mouse_sensitivity = 0.1
+movement_speed = 10.0
+fast_speed_multiplier = 2.1
+gravity = 9.8
+skill_id = 0

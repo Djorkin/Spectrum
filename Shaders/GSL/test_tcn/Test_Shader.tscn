@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cudngltn3v6lk"]
+
+[ext_resource type="Material" uid="uid://bj5d3chiccv78" path="res://Shaders/GSL/test_tcn/Test_Shader.tres" id="1_cldut"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="."]
+material = ExtResource("1_cldut")
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34375
+anchor_top = 0.222222
+anchor_right = 0.65625
+anchor_bottom = 0.777778
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

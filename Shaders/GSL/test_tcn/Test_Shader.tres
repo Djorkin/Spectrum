@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bj5d3chiccv78"]
+
+[ext_resource type="Shader" path="res://Shaders/GSL/Node_Shaders/Main_Shader.gdshader" id="1_0ku12"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0ku12")
+shader_parameter/use_reference = false
+shader_parameter/object_origin = Vector3(0, 0, 0)
+shader_parameter/mapping_type = 3
+shader_parameter/location = Vector3(0, 0, 0)
+shader_parameter/rotation_degrees = Vector3(-666, -666, 666)
+shader_parameter/scale = Vector3(3, -3, 1)

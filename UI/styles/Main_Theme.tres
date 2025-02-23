@@ -1,0 +1,75 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bqojxsiorhe8d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7w13p"]
+content_margin_left = 45.0
+bg_color = Color(1, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pr7e"]
+content_margin_left = 45.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypy2k"]
+content_margin_left = 45.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjh1t"]
+content_margin_left = 45.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s7kj"]
+content_margin_left = 48.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chisr"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snlnf"]
+content_margin_left = 45.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbn28"]
+bg_color = Color(0.905882, 0.905882, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m2mb"]
+bg_color = Color(0.905882, 0.905882, 0, 1)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 32
+Button/styles/disabled = SubResource("StyleBoxFlat_7w13p")
+Button/styles/focus = SubResource("StyleBoxFlat_5pr7e")
+Button/styles/hover = SubResource("StyleBoxFlat_ypy2k")
+Button/styles/normal = SubResource("StyleBoxFlat_xjh1t")
+Button/styles/pressed = SubResource("StyleBoxFlat_6s7kj")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_chisr")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_chisr")
+Label/colors/font_color = Color(0, 0, 0, 1)
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_snlnf")
+Panel/styles/panel = SubResource("StyleBoxFlat_xbn28")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_0m2mb")

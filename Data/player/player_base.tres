@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=2 format=3 uid="uid://b6nbolf78k8jj"]
+
+[ext_resource type="Script" path="res://Data/player/player_config.gd" id="1_7t4bu"]
+
+[resource]
+script = ExtResource("1_7t4bu")
+naming = "none"
+mouse_sensitivity = 0.1
+movement_speed = 10.0
+fast_speed_multiplier = 2.0
+gravity = 9.8
+skill_id = 0

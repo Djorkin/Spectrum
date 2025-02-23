@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://cvur02skyqnwq"]
+
+[ext_resource type="Script" path="res://Data/Loader/Loader_Resource.gd" id="1_6nwgn"]
+[ext_resource type="PackedScene" uid="uid://cerkpjvixn5fn" path="res://tsn/Char/player_Male.tscn" id="2_imsrq"]
+[ext_resource type="PackedScene" uid="uid://lp7lcwesujfe" path="res://tsn/Game/test_scene.tscn" id="3_k4ocm"]
+[ext_resource type="PackedScene" uid="uid://4rjgqyuuum5x" path="res://tsn/Char/player_Female.tscn" id="3_nvdf4"]
+[ext_resource type="PackedScene" uid="uid://bjjjn04ixxf7l" path="res://tsn/Asset/shader_cube.tscn" id="5_xp8pq"]
+
+[resource]
+script = ExtResource("1_6nwgn")
+dev_map = ExtResource("3_k4ocm")
+alisa = ExtResource("3_nvdf4")
+alex = ExtResource("2_imsrq")
+shader_cube = ExtResource("5_xp8pq")

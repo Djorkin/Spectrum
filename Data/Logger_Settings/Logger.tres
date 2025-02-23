@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b8mmt3wsftu8e"]
+
+[ext_resource type="Script" path="res://Data/Logger_Settings/Logger_Settings.gd" id="1_7xihl"]
+
+[resource]
+script = ExtResource("1_7xihl")
+logging_enabled = true
+max_messages_ui = 100
+max_txt_msg = 333
+max_log_files = 1
+default_color = Color(1, 1, 1, 1)
+warn_color = Color(1, 1, 0, 1)
+error_color = Color(0.99293, 0.368364, 0.43986, 1)
+say_color = Color(4.04298e-06, 0.740449, 0.645209, 1)

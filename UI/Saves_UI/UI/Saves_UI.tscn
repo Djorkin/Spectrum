@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://wve1txihksg3"]
+
+[ext_resource type="Script" path="res://UI/Saves_UI/Scripts/Save&Load_UI.gd" id="1_kuxtg"]
+[ext_resource type="PackedScene" uid="uid://bruqj3a1nb3pm" path="res://UI/Saves_UI/UI/save_slot_ui.tscn" id="2_4dd1g"]
+[ext_resource type="Theme" uid="uid://bqojxsiorhe8d" path="res://UI/styles/Main_Theme.tres" id="2_nf8hd"]
+[ext_resource type="LabelSettings" uid="uid://cw762dw7tsgsm" path="res://UI/styles/Label/h1.tres" id="3_rhdaw"]
+[ext_resource type="Theme" uid="uid://cgg52bqvjuehj" path="res://UI/styles/Button_Style.tres" id="5_pj1kb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ml8vh"]
+bg_color = Color(0.905882, 0.905882, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="Saves_UI" type="CanvasLayer"]
+script = ExtResource("1_kuxtg")
+slot_scene = ExtResource("2_4dd1g")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_nf8hd")
+color = Color(0.905882, 0.905882, 0, 1)
+
+[node name="Panel" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37
+anchor_top = 0.269
+anchor_right = 0.63
+anchor_bottom = 0.731
+offset_left = -0.400024
+offset_top = -0.52002
+offset_right = 0.399902
+offset_bottom = 0.52002
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_nf8hd")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ml8vh")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Save&Load" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Save/Load"
+label_settings = ExtResource("3_rhdaw")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Container_slot" type="VBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="2" type="HBoxContainer" parent="Control/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Close" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer/2" groups=["audio_buttons"]]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme = ExtResource("5_pj1kb")
+text = "Close"
+
+[connection signal="pressed" from="Control/Panel/MarginContainer/VBoxContainer/2/Close" to="." method="_on_close_pressed"]
