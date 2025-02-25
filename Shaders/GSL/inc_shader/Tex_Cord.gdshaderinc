@@ -25,4 +25,3 @@ vec3 apply_generated(vec3 vertex_pos) {
     vec3 gen = (vertex_pos - bbox_min) / (bbox_max - bbox_min);
     return clamp(gen, vec3(0.0), vec3(1.0));
 }
-

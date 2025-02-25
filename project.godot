@@ -45,7 +45,7 @@ import/atlas_max_width=4096
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/blender_godot_pipeline/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_shader_linker_(gsl)/plugin.cfg")
 
 [file_customization]
 

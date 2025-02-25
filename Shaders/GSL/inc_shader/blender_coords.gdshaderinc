@@ -14,4 +14,3 @@ vec3 blender_to_godot(vec3 blender_pos) {
 vec3 blender_to_godot_normal(vec3 blender_normal) {
     return normalize((BLENDER_TO_GODOT * vec4(blender_normal, 0.0)).xyz);
 }
-

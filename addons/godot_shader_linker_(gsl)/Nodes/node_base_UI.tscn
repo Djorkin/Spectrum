@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://cel5p8bwjbs6f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ynpw"]
+bg_color = Color(0.176419, 0.176419, 0.176419, 1)
+shadow_size = 19
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lr2u"]
+bg_color = Color(0.52287, 0.0168994, 0.00936268, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.142458
+anchor_bottom = 0.306593
+offset_right = -0.520004
+offset_bottom = -0.12001
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ynpw")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 41.705)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4lr2u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(33, 0)
+layout_mode = 2
+text = "^"
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "Node"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/PanelContainer"]
+layout_mode = 2

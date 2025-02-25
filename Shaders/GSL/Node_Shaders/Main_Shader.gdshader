@@ -14,9 +14,9 @@ void vertex() {
     //tex_coord = apply_generated(blender_to_godot(VERTEX));
 	//normal_coord = apply_normal(NORMAL);
     vec4 world_pos = MODEL_MATRIX * vec4(VERTEX * vec3(1.0,1.0,-1.0), 1.0);
-    
+
     world_pos.xyz -= object_origin;
-		
+
     if (use_reference) {
         object_coord = (object_ref_transform_inv * world_pos).xyz;
     } else {

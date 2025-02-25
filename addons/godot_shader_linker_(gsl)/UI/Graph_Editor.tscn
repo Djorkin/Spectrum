@@ -1,0 +1,130 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjieaxn8bvlix"]
+
+[ext_resource type="Script" path="res://addons/godot_shader_linker_(gsl)/UI/Graph_.gd" id="1_i36sa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqt1m"]
+
+[sub_resource type="GDScript" id="GDScript_h4l8q"]
+script/source = "@tool
+extends GraphNode
+#
+#signal value_updated(value: float)
+#
+#var a: float = 0.0
+#var b: float = 0.0
+#
+#func _ready():
+	## Настройка слотов
+	#set_slot(0, true, TYPE_FLOAT, Color(0.4, 0.8, 0.4), 
+			#false, TYPE_FLOAT, Color(0.8, 0.4, 0.4))
+	#set_slot(1, true, TYPE_FLOAT, Color(0.4, 0.8, 0.4), 
+			#true, TYPE_FLOAT, Color(0.8, 0.4, 0.4))
+	#
+	## Подключение сигналов
+	#$HBox/A.text_changed.connect(_on_value_changed)
+	#$HBox/B.text_changed.connect(_on_value_changed)
+#
+#func _on_value_changed(new_text: String):
+	## Обновление значений и расчет
+	#a = $HBox/A.text.to_float()
+	#b = $HBox/B.text.to_float()
+	#var sum = a + b
+	#emit_signal(\"value_updated\", sum)
+#
+#func get_output_value() -> float:
+	#return a + b
+#
+#func set_input_value(port: int, value: float):
+	#match port:
+		#0: 
+			#a = value
+			#$HBox/A.text = str(a)
+		#1: 
+			#b = value
+			#$HBox/B.text = str(b)
+	#_on_value_changed(\"\")
+"
+
+[node name="Graph" type="GraphEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/grid_major = Color(0.600081, 0.175486, 0.50879, 1)
+grid_pattern = 1
+snapping_distance = 50
+connection_lines_antialiased = false
+zoom_min = 0.2
+zoom_max = 2.0
+minimap_enabled = false
+show_zoom_buttons = false
+script = ExtResource("1_i36sa")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.952778
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.2852
+offset_bottom = -12.2852
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_uqt1m")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Add"
+flat = true
+
+[node name="GraphNode" type="GraphNode" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 82.0
+offset_right = 410.0
+offset_bottom = 519.0
+mouse_filter = 1
+position_offset = Vector2(55, 82)
+title = "Sum"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = SubResource("GDScript_h4l8q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GraphNode"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="GraphNode/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "0"
+
+[node name="LineEdit2" type="LineEdit" parent="GraphNode/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "0"
+
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]

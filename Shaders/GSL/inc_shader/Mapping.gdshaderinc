@@ -59,7 +59,7 @@ vec3 apply_mapping(vec3 uv) {
         );
 
         mat3 R = rx * ry * rz;
-        
+
         mat3 S_inv = mat3(
             vec3(1.0 / scale.x, 0.0, 0.0),
             vec3(0.0, 1.0 / scale.y, 0.0),
